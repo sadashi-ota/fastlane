@@ -128,7 +128,7 @@ module Supply
       UI.user_error!("Unable to find the requested track - '#{Supply.config[:track]}'") unless track
       UI.user_error!("Unable to find the requested release on track - '#{Supply.config[:track]}'") unless release
 
-      version_code = release.version_codes.first
+      version_code = Supply.config[:version_code].to_s
 
       UI.message("Updating #{version_code}'s rollout to '#{Supply.config[:rollout]}' on track '#{Supply.config[:track]}'...")
 
